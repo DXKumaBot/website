@@ -16,6 +16,8 @@
 
 - [Ekzykes](https://space.bilibili.com/180325253)
   - 参与开字母（猜歌）原型开发
+- [Astyer7](https://codeberg.org/Astyer7)
+  - 参与开发
 
 ## 特别鸣谢
 
@@ -38,7 +40,7 @@
 
 ## 源码仓库
 
-[Codeberg](https://codeberg.org/Derakkuma)
+[Codeberg](https://codeberg.org/ProjectKuma)
 
 > [!NOTE]
 > 本项目源码采用[GNU AFFERO 通用公共许可证 版本 3](https://gnu.ac.cn/licenses/agpl-3.0.html)授权

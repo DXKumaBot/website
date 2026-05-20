@@ -2,7 +2,7 @@ export default {
   iconLinks: [
     {
       icon: "git",
-      href: "https://codeberg.org/Derakkuma",
+      href: "https://codeberg.org/ProjectKuma",
       title: "Codeberg",
     },
   ],

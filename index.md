@@ -19,7 +19,7 @@ _layout: landing
         </div>
         <div class="hero-image">
              <div class="image-bg"></div>
-             <img src="images/logo.png" alt="Derakkuma Logo" class="image-icon">
+             <img src="images/logo.png" alt="DXKuma Logo" class="image-icon">
         </div>
     </div>
     <div class="features-section">

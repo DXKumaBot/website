@@ -33,7 +33,7 @@
       "_appLogoPath": "images/logo.png",
       "_appFaviconPath": "images/logo.png",
       "_gitContribute": {
-        "repo": "https://codeberg.org/Derakkuma/website",
+        "repo": "https://codeberg.org/ProjectKuma/website",
         "branch": "main"
       },
       "_enableSearch": true,
