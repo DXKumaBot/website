@@ -43,4 +43,4 @@
 [Codeberg](https://codeberg.org/ProjectKuma)
 
 > [!NOTE]
-> 本项目源码采用[GNU AFFERO 通用公共许可证 版本 3](https://gnu.ac.cn/licenses/agpl-3.0.html)授权
+> 本项目源码采用[GNU Affero 通用公共许可证 版本 3](https://www.gnu.org/licenses/agpl-3.0.html)及[GNU 宽通用公共许可证 版本 3](https://www.gnu.org/licenses/lgpl-3.0.html)授权
