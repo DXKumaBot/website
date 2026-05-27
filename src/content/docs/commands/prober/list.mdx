@@ -1,0 +1,261 @@
+---
+title: 成绩列表
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+:::tip[你知道吗？]
+以下指令支持在命令后附带页码来翻页
+:::
+
+## 按等级筛选
+
+生成使用等级进行筛选的成绩列表
+
+<Tabs syncKey="bot-type">
+  <TabItem label="官B版">
+    ```regexp frame="none"
+    @迪拉熊 /成绩表 等级 <level:number>+?
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    @迪拉熊 /成绩表 等级 14+
+    ```
+    </details>
+  </TabItem>
+  <TabItem label="普通版">
+    ```regexp frame="none"
+    (list|成绩表|成绩列表|成绩表格) <level:number>+?
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    list 14+
+    ```
+    </details>
+  </TabItem>
+</Tabs>
+
+| 参数    | 简介 | 类型 | 范围 | 重要度 | 示例 |
+| ------- | ---- | ---- | ---- | ------ | ---- |
+| `level` | 等级 | 整数 | 1~15 | 必填   | `14` |
+
+## 按版本筛选
+
+生成使用版本进行筛选的成绩列表
+
+<Tabs syncKey="bot-type">
+  <TabItem label="官B版">
+    ```regexp frame="none"
+    @迪拉熊 /成绩表 版本 (真|超|檄|橙|晓|桃|樱|紫|堇|白|雪|辉|舞|熊|华|爽|煌|宙|星|祭|祝|双|宴|镜|彩) (绿|黄|红|紫|白)?
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    @迪拉熊 /成绩表 版本 熊
+    ```
+    </details>
+  </TabItem>
+  <TabItem label="普通版">
+    ```regexp frame="none"
+    (list|成绩表|成绩列表|成绩表格) (真|超|檄|橙|晓|桃|樱|紫|堇|白|雪|辉|舞|熊|华|爽|煌|宙|星|祭|祝|双|宴|镜|彩) (绿|黄|红|紫|白)?
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    list 熊
+    ```
+    </details>
+  </TabItem>
+</Tabs>
+
+## 按寸止筛选
+
+生成使用寸止进行筛选的成绩列表
+
+:::tip[你知道吗？]
+寸止标准为最低达成率减`绝赞50落与TAP粉之间取其小`
+:::
+
+<Tabs syncKey="bot-type">
+  <TabItem label="官B版">
+    ```regexp frame="none"
+    @迪拉熊 /成绩表 寸止
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    @迪拉熊 /成绩表 寸止
+    ```
+    </details>
+  </TabItem>
+  <TabItem label="普通版">
+    ```regexp frame="none"
+    (sunn|sun|cun|寸|🤏)(list|表|列表|表格)
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    cunlist
+    ```
+    </details>
+  </TabItem>
+</Tabs>
+
+## 按锁血筛选
+
+生成使用锁血进行筛选的成绩列表
+
+:::tip[你知道吗？]
+锁血标准为最低达成率加`绝赞50落与TAP粉之间取其小`
+:::
+
+<Tabs syncKey="bot-type">
+  <TabItem label="官B版">
+    ```regexp frame="none"
+    @迪拉熊 /成绩表 锁血
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    @迪拉熊 /成绩表 锁血
+    ```
+    </details>
+  </TabItem>
+  <TabItem label="普通版">
+    ```regexp frame="none"
+    (suo|锁|🔒)(list|表|列表|表格)
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    suolist
+    ```
+    </details>
+  </TabItem>
+</Tabs>
+
+## 按DX星数筛选
+
+生成使用DX星星数量进行筛选的成绩列表
+
+<Tabs syncKey="bot-type">
+  <TabItem label="官B版">
+    ```regexp frame="none"
+    @迪拉熊 /成绩表 dx星 <value:number+>
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    @迪拉熊 /成绩表 dx星 3 4 5
+    ```
+    </details>
+  </TabItem>
+  <TabItem label="普通版">
+    ```regexp frame="none"
+    xx(list|表|列表|表格) <value:number+>
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    xxlist 3 4 5
+    ```
+    </details>
+  </TabItem>
+</Tabs>
+
+| 参数    | 简介       | 类型         | 范围 | 重要度 | 示例    |
+| ------- | ---------- | ------------ | ---- | ------ | ------- |
+| `value` | DX星星数量 | 单或多个整数 | 0~5  | 必填   | `3 4 5` |
+
+## 按评级筛选
+
+生成使用评级进行筛选的成绩列表
+
+<Tabs syncKey="bot-type">
+  <TabItem label="官B版">
+    ```regexp frame="none"
+    @迪拉熊 /成绩表 评级 <value:string+>
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    @迪拉熊 /成绩表 评级 sss+ sss
+    ```
+    </details>
+  </TabItem>
+  <TabItem label="普通版">
+    ```regexp frame="none"
+    ra(list|表|列表|表格) <value:string+>
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    ralist sss+ sss
+    ```
+    </details>
+  </TabItem>
+</Tabs>
+
+| 参数    | 简介 | 类型         | 重要度 | 示例       |
+| ------- | ---- | ------------ | ------ | ---------- |
+| `value` | 评级 | 单或多个文字 | 必填   | `sss+ sss` |
+
+## 按AP筛选
+
+生成使用完美无缺进行筛选的成绩列表
+
+<Tabs syncKey="bot-type">
+  <TabItem label="官B版">
+    ```regexp frame="none"
+    @迪拉熊 /成绩表 (完美|ap)
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    @迪拉熊 /成绩表 ap
+    ```
+    </details>
+  </TabItem>
+  <TabItem label="普通版">
+    ```regexp frame="none"
+    ap(list|表|列表|表格)
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    aplist
+    ```
+    </details>
+  </TabItem>
+</Tabs>
+
+## 按FC筛选
+
+生成使用全连击进行筛选的成绩列表
+
+<Tabs syncKey="bot-type">
+  <TabItem label="官B版">
+    ```regexp frame="none"
+    @迪拉熊 /成绩表 (全连|fc)
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    @迪拉熊 /成绩表 fc
+    ```
+    </details>
+  </TabItem>
+  <TabItem label="普通版">
+    ```regexp frame="none"
+    fc(list|表|列表|表格)
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    fclist
+    ```
+    </details>
+  </TabItem>
+</Tabs>

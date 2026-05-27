@@ -1,0 +1,191 @@
+---
+title: Roleplay互动
+---
+
+:::note[注意]
+以下指令仅普通版可用
+:::
+
+:::note[注意]
+以下指令仅群聊场景可用
+:::
+
+## 香草迪拉熊
+
+会被迪拉熊骂
+
+```regexp frame="none"
+(香草|xc)(迪拉熊|dlx)
+```
+
+<details>
+<summary>示例</summary>
+```regexp frame="none"
+xcdlx
+```
+</details>
+
+## 喜欢你
+
+将获得迪拉熊的喜爱
+
+```regexp frame="none"
+(迪拉熊|dlx)(我喜欢你|wxhn)
+```
+
+<details>
+<summary>示例</summary>
+```regexp frame="none"
+dlxwxhn
+```
+</details>
+
+## 随机选择
+
+迪拉熊帮你选
+
+```regexp frame="none"
+(迪拉熊|dlx)...是<option:string>(还是<option:string>)+
+```
+
+<details>
+<summary>示例</summary>
+```regexp frame="none"
+迪拉熊你是熊还是狮子还是马桶圈
+```
+</details>
+
+| 参数     | 简介 | 类型       | 位数      | 重要度 | 示例             |
+| -------- | ---- | ---------- | --------- | ------ | ---------------- |
+| `option` | 选项 | 非重复词语 | 2组及以上 | 必填   | `熊 狮子 马桶圈` |
+
+## 出来了
+
+字面意思
+
+:::tip[注意]
+该指令有色色版差分
+:::
+
+```regexp frame="none"
+dlxcum
+```
+
+<details>
+<summary>示例</summary>
+```regexp frame="none"
+dlxcum
+```
+</details>
+
+## 请吃绝赞
+
+将获得迪拉熊的感谢
+
+```regexp frame="none"
+迪拉熊(绝赞给你吃|绝赞给你吃|给你吃绝赞|请你吃绝赞)
+```
+
+<details>
+<summary>示例</summary>
+```regexp frame="none"
+迪拉熊绝赞给你吃
+```
+</details>
+
+## 戳屁屁
+
+戳迪拉熊的屁屁
+
+```regexp frame="none"
+{双击迪拉熊头像}
+```
+
+## Roleplay对话
+
+触发Roleplay对话功能
+
+:::tip[你知道吗？]
+私聊场景无需@迪拉熊即可使用
+:::
+
+:::caution[注意！]
+使用普通版其他指令请勿@迪拉熊
+:::
+
+```regexp frame="none"
+@迪拉熊 <message:string>
+```
+
+<details>
+<summary>示例</summary>
+```regexp frame="none"
+@迪拉熊 你好
+```
+</details>
+
+| 参数      | 简介 | 类型 | 重要度 | 示例   |
+| --------- | ---- | ---- | ------ | ------ |
+| `message` | 消息 | 文字 | 必填   | `你好` |
+
+## 清空对话记忆
+
+清除当前Roleplay对话中的所有上下文
+
+:::note[注意]
+该功能每次消耗1000星星
+:::
+
+:::caution[注意！]
+记忆一旦移除不可恢复
+:::
+
+```regexp frame="none"
+(清除|清空|重置)(上下文|记忆)|大记忆清除术|(迪拉熊|dlx)忘记(我|一切)
+```
+
+<details>
+<summary>示例</summary>
+```regexp frame="none"
+重置记忆
+```
+</details>
+
+## 复读
+
+触发复读功能
+
+```regexp frame="none"
+{三人连续重复同一消息}
+```
+
+## 文字转语音
+
+将文本转换为迪拉熊语音
+
+:::note[注意]
+该功能会按用量消耗星星余额
+:::
+
+```regexp frame="none"
+(迪拉熊|dlx)(说：|说|say|speak|tts|t2s|tta|t2a) <content:string>
+```
+
+<details>
+<summary>示例</summary>
+```regexp frame="none"
+dlxsay 你好，我是迪拉熊
+```
+</details>
+
+| 参数      | 简介         | 类型 | 重要度 | 示例               |
+| --------- | ------------ | ---- | ------ | ------------------ |
+| `content` | 要转换的文本 | 文字 | 必填   | `你好，我是迪拉熊` |
+
+## 入群/退群通知
+
+触发入群/退群通知功能
+
+```regexp frame="none"
+{加入/退出群聊}
+```

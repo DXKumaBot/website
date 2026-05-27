@@ -1,0 +1,77 @@
+---
+title: 图库
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+:::note[注意]
+以下指令仅普通版可用
+:::
+
+:::note[注意]
+以下指令仅群聊场景可用
+:::
+
+## 随机作品
+
+随机发送迪拉熊相关作品
+
+:::tip[你知道吗？]
+该功能可获得随机数量的星星
+:::
+
+<Tabs syncKey="gallery-type">
+  <TabItem label="普通图片">
+    ```regexp frame="none"
+    (随机)?(迪拉熊|dlx)
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    dlx
+    ```
+    </details>
+  </TabItem>
+  <TabItem label="NSFW图片">
+    :::note[注意]
+    该指令仅色色版可用
+    :::
+
+    ```regexp frame="none"
+    (随机)?(迪拉熊|dlx)(色图|st|nsfw)
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    dlxst
+    ```
+    </details>
+
+  </TabItem>
+  <TabItem label="视频">
+    ```regexp frame="none"
+    (随机)?(迪拉熊|dlx)(视频|sp|v)
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    dlxsp
+    ```
+    </details>
+  </TabItem>
+</Tabs>
+
+## 厨力排行榜
+
+获取迪拉熊图库查询次数排行榜
+
+```regexp frame="none"
+(迪拉熊|dlx)(厨力(排行榜|榜)|rank)
+```
+
+<details>
+<summary>示例</summary>
+```regexp frame="none"
+dlxrank
+```
+</details>

@@ -1,0 +1,193 @@
+---
+title: 乐曲信息
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+## 谱面信息
+
+查询乐曲各难度数据信息
+
+<Tabs syncKey="bot-type">
+  <TabItem label="官B版">
+    ```regexp frame="none"
+    @迪拉熊 /谱面信息 (dx|sd|标准|标|宴|1p|2p)? <word:string> | @迪拉熊 (dx|sd|标准|标|宴)? <word:string> (是什么歌？|是什么歌)
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    @迪拉熊 /谱面信息 迪拉熊
+    ```
+    </details>
+  </TabItem>
+  <TabItem label="普通版">
+    ```regexp frame="none"
+    (chart|id) (dx|sd|标准|标|左|右|宴|1p|2p)? <word:string> | (dx|sd|标准|标|宴)? <word:string> (是什么歌？|是什么歌)
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    chart 迪拉熊
+    ```
+    </details>
+  </TabItem>
+</Tabs>
+
+| 参数   | 简介   | 类型 | 重要度 | 示例     |
+| ------ | ------ | ---- | ------ | -------- |
+| `word` | 关键词 | 文字 | 必填   | `迪拉熊` |
+
+## 随机乐曲信息
+
+随机推送乐曲信息
+
+<Tabs syncKey="bot-type">
+  <TabItem label="官B版">
+    ```regexp frame="none"
+    @迪拉熊 /随机谱面 (绿|黄|红|紫|白)? ([level:number]+?)?
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    @迪拉熊 /随机谱面
+    ```
+    </details>
+  </TabItem>
+  <TabItem label="普通版">
+    ```regexp frame="none"
+    (rand|随歌|随个|随首|随张) (绿|黄|红|紫|白)? ([level:number]+?)?|mai什么|随机舞萌|今日舞萌
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    rand 紫 14+
+    ```
+    </details>
+  </TabItem>
+</Tabs>
+
+| 参数    | 简介       | 类型                      | 重要度 | 示例 |
+| ------- | ---------- | ------------------------- | ------ | ---- |
+| `level` | 等级或定数 | 小数（若后面接+则为整数） | 可选   | `14` |
+
+## 成绩信息
+
+查询乐曲各难度成绩
+
+<Tabs syncKey="bot-type">
+  <TabItem label="官B版">
+    ```regexp frame="none"
+    @迪拉熊 /成绩信息 (dx|标准|宴)? <word:string>
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    @迪拉熊 /成绩信息 迪拉熊
+    ```
+    </details>
+  </TabItem>
+  <TabItem label="普通版">
+    ```regexp frame="none"
+    (rec|info) (dx|sd|标准|标|宴) <word:string>
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    rec 迪拉熊
+    ```
+    </details>
+  </TabItem>
+</Tabs>
+
+| 参数   | 简介   | 类型 | 重要度 | 示例     |
+| ------ | ------ | ---- | ------ | -------- |
+| `word` | 关键词 | 文字 | 必填   | `迪拉熊` |
+
+## 达成率计算
+
+生成谱面达成率表格
+
+<Tabs syncKey="bot-type">
+  <TabItem label="官B版">
+    ```regexp frame="none"
+    @迪拉熊 /得分计算 ((绿|黄|红|紫|白) (dx|标准)?|1p|2p)? <word:string>
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    @迪拉熊 /得分计算 紫 迪拉熊
+    ```
+    </details>
+  </TabItem>
+  <TabItem label="普通版">
+    ```regexp frame="none"
+    (achv|分数表格|分数表) ((绿|黄|红|紫|白) (dx|sd|标准|标)?|左|右|1p|2p) <word:string>
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    achv 紫 迪拉熊
+    ```
+    </details>
+  </TabItem>
+</Tabs>
+
+| 参数   | 简介   | 类型 | 重要度 | 示例     |
+| ------ | ------ | ---- | ------ | -------- |
+| `word` | 关键词 | 文字 | 必填   | `迪拉熊` |
+
+## 点歌
+
+发送指定乐曲的音乐卡片
+
+:::note[注意]
+该指令仅普通版可用
+:::
+
+```regexp frame="none"
+(迪拉熊|dlx)(req|点歌) <word:string>
+```
+
+<details>
+<summary>示例</summary>
+```regexp frame="none"
+dlxreq 迪拉熊
+```
+</details>
+
+| 参数   | 简介   | 类型 | 重要度 | 示例     |
+| ------ | ------ | ---- | ------ | -------- |
+| `word` | 关键词 | 文字 | 必填   | `迪拉熊` |
+
+## 查询乐曲别名
+
+查询乐曲对应别名
+
+<Tabs syncKey="bot-type">
+  <TabItem label="官B版">
+    ```regexp frame="none"
+    @迪拉熊 /(乐曲别名|搜索别名) <word:string> | @迪拉熊 <word:string> (有什么|有哪些)(别名|别称)？?
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    @迪拉熊 /乐曲别名 迪拉熊
+    ```
+    </details>
+  </TabItem>
+  <TabItem label="普通版">
+    ```regexp frame="none"
+    (alias|查看别名|查看别称|查别名|查别称) <word:string> | <word:string> (有什么|有哪些)(别名|别称)？?
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    alias 迪拉熊
+    ```
+    </details>
+  </TabItem>
+</Tabs>
+
+| 参数   | 简介   | 类型 | 重要度 | 示例     |
+| ------ | ------ | ---- | ------ | -------- |
+| `word` | 关键词 | 文字 | 必填   | `迪拉熊` |

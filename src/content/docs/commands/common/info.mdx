@@ -1,0 +1,34 @@
+---
+title: Bot信息
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+## 指令大全
+
+生成指令大全
+
+<Tabs syncKey="bot-type">
+  <TabItem label="官B版">
+    ```regexp
+    @迪拉熊 /帮助
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    @迪拉熊 /帮助
+    ```
+    </details>
+  </TabItem>
+  <TabItem label="普通版">
+    ```regexp
+    (迪拉熊|dlx)(help|指令|帮助)|指令大全
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    dlxhelp
+    ```
+    </details>
+  </TabItem>
+</Tabs>

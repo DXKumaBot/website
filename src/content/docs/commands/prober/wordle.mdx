@@ -1,0 +1,159 @@
+---
+title: 开字母
+---
+
+:::note[注意]
+以下指令仅普通版可用
+:::
+
+:::note[注意]
+以下指令仅群聊场景可用
+:::
+
+## 开始游戏
+
+开始开字母游戏
+
+```regexp frame="none"
+(开始|ks)(猜歌|开字母|kzm)
+```
+
+<details>
+<summary>示例</summary>
+```regexp frame="none"
+kskzm
+```
+</details>
+
+## 开出字母
+
+开出可能存在于歌名中的字母
+
+```regexp frame="none"
+开<word:string>
+```
+
+<details>
+<summary>示例</summary>
+```regexp frame="none"
+开a
+```
+</details>
+
+## 尝试猜歌
+
+:::tip[你知道吗？]
+该功能可获得随机数量的星星
+:::
+
+尝试直接猜出乐曲
+
+```regexp frame="none"
+<name:string>
+```
+
+## 结束游戏
+
+结束当前开字母游戏
+
+```regexp frame="none"
+(结束|跳过|js|tg)(猜歌|开字母|kzm)
+```
+
+<details>
+<summary>示例</summary>
+```regexp frame="none"
+jskzm
+```
+</details>
+
+## 提示
+
+获取乐曲相关的提示
+
+# [乐曲信息](#tab/info)
+
+:::tip[你知道吗？]
+每首乐曲有5次获取机会
+:::
+
+```regexp frame="none"
+(提示|提醒|信息) [index:number]
+```
+
+<details>
+<summary>示例</summary>
+```regexp frame="none"
+提示
+```
+</details>
+
+# [封面](#tab/jacket)
+
+:::tip[你知道吗？]
+每首乐曲有2次获取机会
+:::
+
+```regexp frame="none"
+(封面|曲绘|图片|图) [index:number]
+```
+
+<details>
+<summary>示例</summary>
+```regexp frame="none"
+封面
+```
+</details>
+
+# [乐曲片段](#tab/slice)
+
+:::tip[你知道吗？]
+每首乐曲有1次获取机会
+:::
+
+```regexp frame="none"
+(音乐|音频|乐曲|歌曲|片段) [index:number]
+```
+
+<details>
+<summary>示例</summary>
+```regexp frame="none"
+音乐
+```
+</details>
+
+---
+
+| 参数    | 简介 | 类型 | 范围 | 重要度 | 示例 |
+| ------- | ---- | ---- | ---- | ------ | ---- |
+| `index` | 序号 | 整数 | 1~5  | 可选   | `1`  |
+
+## 排行榜
+
+查询猜歌前十排名情况
+
+```regexp frame="none"
+(猜歌|开字母|kzm)(排行榜|榜|rank)
+```
+
+<details>
+<summary>示例</summary>
+```regexp frame="none"
+kzmrank
+```
+</details>
+
+## 排名
+
+查询猜歌个人排名情况
+
+```regexp frame="none"
+(猜歌|开字母|kzm)(个人排名|排名|th)
+```
+
+<details>
+<summary>示例</summary>
+```regexp frame="none"
+kzmth
+```
+</details>

@@ -1,0 +1,275 @@
+---
+title: 用户设置
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+## 查询收藏品
+
+获取所有收藏品及其序号
+
+:::note[注意]
+该指令仅普通版可用
+:::
+
+<Tabs syncKey="collection-type">
+  <TabItem label="姓名框">
+    ```regexp frame="none"
+    plates|plate|看姓名框
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    plate
+    ```
+    </details>
+  </TabItem>
+  <TabItem label="背景">
+    ```regexp frame="none"
+    frames|frame|看背景
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    frame
+    ```
+    </details>
+  </TabItem>
+  <TabItem label="头像">
+    ```regexp frame="none"
+    icons|icon|看头像
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    icon
+    ```
+    </details>
+  </TabItem>
+</Tabs>
+
+## 设置收藏品
+
+为水鱼源设置收藏品
+
+### 姓名框
+
+<Tabs syncKey="bot-type">
+  <TabItem label="官B版">
+    ```regexp frame="none"
+    @迪拉熊 /设置收藏品 姓名框 <id:number>
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    @迪拉熊 /设置收藏品 姓名框 458001
+    ```
+    </details>
+  </TabItem>
+  <TabItem label="普通版">
+    ```regexp frame="none"
+    ((set|s)plate|(设置|设)姓名框) <id:number>
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    splate 458001
+    ```
+    </details>
+  </TabItem>
+</Tabs>
+
+### 背景
+
+<Tabs syncKey="bot-type">
+  <TabItem label="官B版">
+    ```regexp frame="none"
+    @迪拉熊 /设置收藏品 背景 <id:number>
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    @迪拉熊 /设置收藏品 背景 558001
+    ```
+    </details>
+  </TabItem>
+  <TabItem label="普通版">
+    ```regexp frame="none"
+    ((set|s)frame|(设置|设)背景) <id:number>
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    sframe 558001
+    ```
+    </details>
+  </TabItem>
+</Tabs>
+
+### 头像
+
+<Tabs syncKey="bot-type">
+  <TabItem label="官B版">
+    ```regexp frame="none"
+    @迪拉熊 /设置收藏品 头像 <id:number>
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    @迪拉熊 /设置收藏品 头像 458001
+    ```
+    </details>
+  </TabItem>
+  <TabItem label="普通版">
+    ```regexp frame="none"
+    ((set|s)icon|(设置|设)头像) <id:number>
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    sicon 458001
+    ```
+    </details>
+  </TabItem>
+</Tabs>
+
+| 参数 | 简介       | 类型 | 位数  | 重要度 | 示例     |
+| ---- | ---------- | ---- | ----- | ------ | -------- |
+| `id` | 收藏品序号 | 整数 | 1~6位 | 必填   | `458001` |
+
+## 设置功能状态
+
+启用或禁用功能
+
+### 定数分析
+
+<Tabs syncKey="bot-type">
+  <TabItem label="官B版">
+    ```regexp frame="none"
+    @迪拉熊 /设置功能 定数分析 (启用|禁用)
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    @迪拉熊 /设置功能 定数分析 启用
+    ```
+    </details>
+  </TabItem>
+  <TabItem label="普通版">
+    ```regexp frame="none"
+    (开启|启用|关闭|禁用|开|关)(定数|分数)(分析|推荐)
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    开启定数分析
+    ```
+    </details>
+  </TabItem>
+</Tabs>
+
+### 代查
+
+:::note[注意]
+该指令仅普通版可用
+:::
+
+```regexp frame="none"
+(开启|启用|允许|关闭|禁用|禁止|开|关)代查
+```
+
+<details>
+<summary>示例</summary>
+```regexp frame="none"
+开启代查
+```
+</details>
+
+## 设置数据源
+
+设置数据来源查分器
+
+<Tabs syncKey="bot-type">
+  <TabItem label="官B版">
+    ```regexp frame="none"
+    @迪拉熊 /(设置数据源|换源) (落雪|水鱼)
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    @迪拉熊 /设置数据源 落雪
+    ```
+    </details>
+  </TabItem>
+  <TabItem label="普通版">
+    ```regexp frame="none"
+    ((切换|更换|换)|设置)(数据源|查分器|源) (落雪|水鱼)
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    换源 落雪
+    ```
+    </details>
+  </TabItem>
+</Tabs>
+
+## 绑定账号
+
+绑定其他平台的账号
+
+### 落雪
+
+:::tip[你知道吗？]
+个人API密钥可以在[账号详情](https://maimai.lxns.net/user/profile?tab=thirdparty)页获取
+:::
+
+<Tabs syncKey="bot-type">
+  <TabItem label="官B版">
+    ```regexp frame="none"
+    @迪拉熊 /绑定 落雪 <token:string>
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    @迪拉熊 /绑定 落雪 ZlxbZW-w3k2EpABLey8evn8G4TevG3wE2T4D4YCzRPX=
+    ```
+    </details>
+  </TabItem>
+  <TabItem label="普通版">
+    ```regexp frame="none"
+    (绑定|bind) 落雪 <token:string>
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    绑定 落雪 ZlxbZW-w3k2EpABLey8evn8G4TevG3wE2T4D4YCzRPX=
+    ```
+    </details>
+  </TabItem>
+</Tabs>
+
+| 参数    | 简介            | 类型 | 位数 | 重要度 | 示例                                           |
+| ------- | --------------- | ---- | ---- | ------ | ---------------------------------------------- |
+| `token` | 落雪个人API密钥 | 文字 | 44位 | 必填   | `ZlxbZW-w3k2EpABLey8evn8G4TevG3wE2T4D4YCzRPX=` |
+
+### QQ
+
+:::note[注意]
+该指令仅官B版可用
+:::
+
+```regexp frame="none"
+@迪拉熊 /绑定 qq <qq:number>
+```
+
+<details>
+<summary>示例</summary>
+```regexp frame="none"
+@迪拉熊 /绑定 qq 10000
+```
+</details>
+
+| 参数 | 简介 | 类型 | 位数   | 重要度 | 示例    |
+| ---- | ---- | ---- | ------ | ------ | ------- |
+| `qq` | QQ号 | 整数 | 5~10位 | 必填   | `10000` |

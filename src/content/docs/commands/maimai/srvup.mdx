@@ -1,0 +1,34 @@
+---
+title: 舞萌服务器
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+## 在线状态
+
+查询舞萌服务器在线状态
+
+<Tabs syncKey="bot-type">
+  <TabItem label="官B版">
+    ```regexp frame="none"
+    @迪拉熊 /在线状态
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    @迪拉熊 /在线状态
+    ```
+    </details>
+  </TabItem>
+  <TabItem label="普通版">
+    ```regexp frame="none"
+    (舞萌|mai)(在线|up)
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    maiup
+    ```
+    </details>
+  </TabItem>
+</Tabs>

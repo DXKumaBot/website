@@ -1,0 +1,276 @@
+---
+title: 机厅排卡/人数查询
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+:::note[注意]
+以下指令仅群聊场景可用
+:::
+
+## 注册机厅
+
+注册并为当前聊天绑定机厅
+
+<Tabs syncKey="bot-type">
+  <TabItem label="官B版">
+    ```regexp frame="none"
+    @迪拉熊 /管理机厅 注册 <name:string>
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    @迪拉熊 /管理机厅 注册 xxx机厅（xxx店）
+    ```
+    </details>
+  </TabItem>
+  <TabItem label="普通版">
+    ```regexp frame="none"
+    注册机厅 <name:string>
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    注册机厅 xxx机厅（xxx店）
+    ```
+    </details>
+  </TabItem>
+</Tabs>
+
+| 参数   | 简介     | 类型 | 重要度 | 示例               |
+| ------ | -------- | ---- | ------ | ------------------ |
+| `name` | 机厅全称 | 文字 | 必填   | `xxx机厅（xxx店）` |
+
+## 绑定机厅
+
+为当前聊天绑定机厅
+
+<Tabs syncKey="bot-type">
+  <TabItem label="官B版">
+    ```regexp frame="none"
+    @迪拉熊 /管理机厅 绑定 <name:string>
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    @迪拉熊 /管理机厅 绑定 xxx机厅（xxx店）
+    ```
+    </details>
+  </TabItem>
+  <TabItem label="普通版">
+    ```regexp frame="none"
+    绑定机厅 <name:string>
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    绑定机厅 xxx机厅（xxx店）
+    ```
+    </details>
+  </TabItem>
+</Tabs>
+
+| 参数   | 简介     | 类型 | 重要度 | 示例               |
+| ------ | -------- | ---- | ------ | ------------------ |
+| `name` | 机厅全称 | 文字 | 必填   | `xxx机厅（xxx店）` |
+
+## 解绑机厅
+
+为当前聊天解绑机厅
+
+<Tabs syncKey="bot-type">
+  <TabItem label="官B版">
+    ```regexp frame="none"
+    @迪拉熊 /管理机厅 解绑 <word:string>
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    @迪拉熊 /管理机厅 解绑 xxx
+    ```
+    </details>
+  </TabItem>
+  <TabItem label="普通版">
+    ```regexp frame="none"
+    解绑机厅 <word:string>
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    解绑机厅 xxx
+    ```
+    </details>
+  </TabItem>
+</Tabs>
+
+| 参数   | 简介           | 类型 | 重要度 | 示例  |
+| ------ | -------------- | ---- | ------ | ----- |
+| `word` | 机厅全称或别名 | 文字 | 必填   | `xxx` |
+
+## 搜索机厅
+
+搜索所有相关机厅
+
+<Tabs syncKey="bot-type">
+  <TabItem label="官B版">
+    ```regexp frame="none"
+    @迪拉熊 /管理机厅 搜索 <word:string>
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    @迪拉熊 /管理机厅 搜索 xxx
+    ```
+    </details>
+  </TabItem>
+  <TabItem label="普通版">
+    ```regexp frame="none"
+    搜索机厅 <word:string>
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    搜索机厅 xxx
+    ```
+    </details>
+  </TabItem>
+</Tabs>
+
+| 参数   | 简介   | 类型 | 重要度 | 示例  |
+| ------ | ------ | ---- | ------ | ----- |
+| `word` | 关键词 | 文字 | 必填   | `xxx` |
+
+## 添加别名
+
+为机厅添加别名
+
+<Tabs syncKey="bot-type">
+  <TabItem label="官B版">
+    ```regexp frame="none"
+    @迪拉熊 /(机厅别名|管理别名) <name:string> 添加 <alias:string>
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    @迪拉熊 /机厅别名 xxx机厅（xxx店） 添加 xxx
+    ```
+    </details>
+  </TabItem>
+  <TabItem label="普通版">
+    ```regexp frame="none"
+    添加别名 <name:string> <alias:string>
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    添加别名 xxx机厅（xxx店） xxx
+    ```
+    </details>
+  </TabItem>
+</Tabs>
+
+| 参数    | 简介     | 类型 | 重要度 | 示例               |
+| ------- | -------- | ---- | ------ | ------------------ |
+| `name`  | 机厅全称 | 文字 | 必填   | `xxx机厅（xxx店）` |
+| `alias` | 机厅别名 | 文字 | 必填   | `xxx`              |
+
+## 删除别名
+
+为机厅删除别名
+
+<Tabs syncKey="bot-type">
+  <TabItem label="官B版">
+    ```regexp frame="none"
+    @迪拉熊 /(机厅别名|管理别名) <name:string> 删除 <alias:string>
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    @迪拉熊 /机厅别名 xxx机厅（xxx店） 删除 xxx
+    ```
+    </details>
+  </TabItem>
+  <TabItem label="普通版">
+    ```regexp frame="none"
+    删除别名 <name:string> <alias:string>
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    删除别名 xxx机厅（xxx店） xxx
+    ```
+    </details>
+  </TabItem>
+</Tabs>
+
+| 参数    | 简介     | 类型 | 重要度 | 示例               |
+| ------- | -------- | ---- | ------ | ------------------ |
+| `name`  | 机厅全称 | 文字 | 必填   | `xxx机厅（xxx店）` |
+| `alias` | 机厅别名 | 文字 | 必填   | `xxx`              |
+
+## 查询卡数
+
+查询当前聊天绑定的机厅卡数
+
+<Tabs syncKey="bot-type">
+  <TabItem label="官B版">
+    ```regexp frame="none"
+    @迪拉熊 /查询卡数 [word:string] | @迪拉熊 (机厅|看看|jt|[word:string])?有?(多少人|多少卡|几人|几卡|几|jr|j)
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    @迪拉熊 /查询卡数
+    ```
+    </details>
+  </TabItem>
+  <TabItem label="普通版">
+    ```regexp frame="none"
+    (机厅|看看|jt|[word:string])?有?(多少人|多少卡|几人|几卡|几|jr|j)
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    机厅有多少卡
+    ```
+    </details>
+  </TabItem>
+</Tabs>
+
+| 参数   | 简介           | 类型 | 重要度 | 示例  |
+| ------ | -------------- | ---- | ------ | ----- |
+| `word` | 机厅全称或别名 | 文字 | 可选   | `xxx` |
+
+## 修改卡数
+
+更新指定机厅卡数
+
+<Tabs syncKey="bot-type">
+  <TabItem label="官B版">
+    ```regexp frame="none"
+    @迪拉熊 /修改卡数 <word:string> (增加|减少|设为|add|reduce|set|加|减|为|＋|－|＝|+|-|=) <num:number> | @迪拉熊 <word:string> (加|减|为|＋|－|＝|+|-|=)? <num:number> (人|卡)?
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    @迪拉熊 /修改卡数 xxx 设为 0
+    ```
+    </details>
+  </TabItem>
+  <TabItem label="普通版">
+    ```regexp frame="none"
+    <word:string> (加|减|为|＋|－|＝|+|-|=)? <num:number> (人|卡)?
+    ```
+    <details>
+    <summary>示例</summary>
+    ```regexp frame="none"
+    xxx 0
+    ```
+    </details>
+  </TabItem>
+</Tabs>
+
+| 参数   | 简介           | 类型 | 重要度 | 示例  |
+| ------ | -------------- | ---- | ------ | ----- |
+| `word` | 机厅全称或别名 | 文字 | 必填   | `xxx` |
+| `num`  | 卡数           | 整数 | 必填   | `0`   |
