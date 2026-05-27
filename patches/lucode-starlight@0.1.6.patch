@@ -1,0 +1,100 @@
+diff --git a/components/overrides/parts/Drawer.astro b/components/overrides/parts/Drawer.astro
+index 4a157c14894dd8235288da978e4b3aae032f5d4d..b125881f7ae89631dd1ec74b5042ef45d37b8375 100644
+--- a/components/overrides/parts/Drawer.astro
++++ b/components/overrides/parts/Drawer.astro
+@@ -1,10 +1,9 @@
+ ---
+ import userConfig from 'virtual:lucode-starlight-config';
+ import { getTranslation } from './NavBar.astro';
++import SidebarSublist from './SidebarSublist.astro';
+ import { getRelativeLocaleUrl } from 'astro:i18n';
+ const { sidebar } = Astro.locals.starlightRoute;
+-
+-const currentPath = Astro.url.pathname;
+ ---
+ 
+ <div popover="auto" id="drawer">
+@@ -41,29 +40,7 @@ const currentPath = Astro.url.pathname;
+             </div>
+ 
+             <div class="links-docs">
+-                {
+-                    sidebar.map(
+-                        (entry) =>
+-                            entry.type !== 'link' && (
+-                                <div class="container-sidebar-entry">
+-                                    <h4 class="entry-title">{entry.label}</h4>
+-
+-                                    {entry.entries.map(
+-                                        (link) =>
+-                                            link.type === 'link' && (
+-                                                <a
+-                                                    href={link.href}
+-                                                    {...link.attrs}
+-                                                    data-active={currentPath === link.href}
+-                                                >
+-                                                    {link.label}
+-                                                </a>
+-                                            )
+-                                    )}
+-                                </div>
+-                            )
+-                    )
+-                }
++                <SidebarSublist sublist={sidebar} />
+             </div>
+         </div>
+     </div>
+@@ -175,31 +152,39 @@ const currentPath = Astro.url.pathname;
+         gap: calc(var(--spacing) * 2);
+     }
+ 
+-    .container-sidebar-entry {
++    .links-docs :global(.container-sidebar-entry) {
+         padding-top: calc(var(--spacing) * 6);
+-        display: flex;
+-        flex-direction: column;
+         gap: calc(var(--spacing) * 2);
++    }
+ 
+-        &:last-child {
+-            margin-bottom: calc(var(--spacing) * 4);
+-        }
++    .links-docs :global(.container-sidebar-entry):last-child {
++        margin-bottom: calc(var(--spacing) * 4);
+     }
+ 
+-    .entry-title {
++    .links-docs :global(.entry-title) {
+         font-weight: 500;
++        font-size: 1rem;
++        line-height: 1.5rem;
++        padding: 0;
++        color: inherit;
+     }
+ 
+-    .container-sidebar-entry a {
++    .links-docs :global(.entry-link) {
++        height: auto;
+         font-size: 1rem;
+         line-height: 1.2rem;
+         color: var(--muted-foreground);
+-        text-decoration: inherit;
++    }
+ 
+-        &[data-active='true'] {
+-            color: var(--foreground);
+-            font-weight: 500;
+-        }
++    .links-docs :global(.entry-link[aria-current='page']) {
++        color: var(--foreground);
++        font-weight: 500;
++    }
++
++    .links-docs :global(.entry-link-inner) {
++        padding: 0;
++        background-color: transparent !important;
++        color: inherit !important;
+     }
+ 
+     .badge {
